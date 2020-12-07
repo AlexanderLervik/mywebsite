@@ -38,6 +38,13 @@
 
             <br><a href="index.html">Homepage</a>
 
+            <select id="op">
+                <option value="add">Add</option>
+                <option value="minus">Minus</option>
+                <option value="divide">Divide</option>
+                <option value="times">Times</option>
+            </select>
+
 
         </div>
 
@@ -47,27 +54,58 @@
 
             let num1 = Math.floor(Math.random() * 10);
             let num2 = Math.floor(Math.random() * 10);
-            let calculate = num1 + num2;
-            let wrong = "wrong";
-            let right = "Right"
+            let calculateAdd = num1 + num2;
+            let calculateMinus = num1 - num2;
+            let calculateDivide = num1 / num2;
+            let calculateTimes = num1 * num2;
+          
 
             document.querySelector("#result").innerHTML = num1;
             document.querySelector("#result2").innerHTML = num2;
             
             function qG () {
                 let input2 = document.getElementById("input2").value;
+                let op = document.getElementById("op").value;
 
                 if (input2 == "") {
                     document.querySelector("#checkResult").innerHTML = "You must write something!";
                     return;
                 }
-              
-                if (input2 == calculate) {
-                    document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
-                } else {
-                    document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+                
+                if (op == "add") {
+
+                    if (input2 == calculateAdd) {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
+                    } else {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+                    }
+
+                } else if (op == "minus") {
+
+                    if (input2 == calculateMinus) {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
+                    } else {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+                    }
+
+                } else if (op == "divide") {
+
+                    if (input2 == calculateDivide) {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
+                    } else {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+                    }
+
+                } else if (op == "times") {
+
+                    if (input2 == calculateTimes) {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
+                    } else {
+                        document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+                    }
 
                 }
+
             }
             
         </script>
