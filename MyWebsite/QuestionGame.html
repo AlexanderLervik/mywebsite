@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Alexander Lervik">
+        <title>Random Number</title>
+
+        <style>
+
+            body {
+                background-color: bisque
+            }
+
+            .coolDiv {
+                text-align: center;
+            }
+
+            p {
+                padding: 5px;
+                margin: 1px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="coolDiv">
+
+            <h1>Question Game</h1>
+         
+            What is <p id="result"></p> + <p id="result2"></p>
+            <input type="text" id="input2">
+            <button onclick="qG()">Check</button>
+            <p id="checkResult"></p>
+
+            <br><a href="index.html">Homepage</a>
+
+
+        </div>
+
+       
+
+        <script>
+
+            let num1 = Math.floor(Math.random() * 10);
+            let num2 = Math.floor(Math.random() * 10);
+            let calculate = num1 + num2;
+            let wrong = "wrong";
+            let right = "Right"
+
+            document.querySelector("#result").innerHTML = num1;
+            document.querySelector("#result2").innerHTML = num2;
+            
+            function qG () {
+                let input2 = document.getElementById("input2").value;
+
+                if (input2 == "") {
+                    document.querySelector("#checkResult").innerHTML = "You must write something!";
+                    return;
+                }
+              
+                if (input2 == calculate) {
+                    document.querySelector("#checkResult").innerHTML = "Your answer was correct!";
+                } else {
+                    document.querySelector("#checkResult").innerHTML = "Your answer was not correct!";
+
+                }
+            }
+            
+        </script>
+        
+    </body>
+</html>
